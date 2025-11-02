@@ -88,6 +88,30 @@ function App() {
     }
   };
 
+  const scrollToWhy = () => {
+    // Unlock scroll when user clicks the CTA button
+    if (scrollLocked) {
+      setScrollLocked(false);
+      document.body.style.overflow = "";
+    }
+
+    const whySection = document.querySelector("#why-use");
+    const navbar = document.querySelector(".navbar");
+    if (whySection && navbar) {
+      const navbarHeight = navbar.offsetHeight;
+      const whySectionTop =
+        whySection.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = whySectionTop - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    } else if (whySection) {
+      whySection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const scrollToBabySteps = () => {
     // Unlock scroll when user clicks the button
     if (scrollLocked) {
@@ -243,6 +267,9 @@ function App() {
           <button className="navbar-button" onClick={scrollToChat}>
             Talk to Ramsey
           </button>
+          <button className="navbar-button" onClick={scrollToWhy}>
+            Why use this
+          </button>
           <button className="navbar-button" onClick={scrollToBabySteps}>
             Baby Steps
           </button>
@@ -281,6 +308,72 @@ function App() {
           id="voiceflow-chat-container"
           className="voiceflow-chat-container"
         ></div>
+      </section>
+
+      {/* "Why use this" section placed right under the chatbot */}
+      <section id="why-use" className="why-section">
+        <div className="why-container">
+          <h2>Why use Ramsey AI?</h2>
+          <p className="why-lead">
+            Get quick, personalized guidance mapped to Dave Ramsey's Baby Steps
+            — identify your current step, get next actions, and see how to
+            progress.
+          </p>
+          <ul
+            className="stats-list"
+            aria-label="Key savings and debt statistics"
+          >
+            <li className="stat-item">
+              <div className="stat-value">Savings</div>
+              <div className="stat-text">
+                28% of Americans have less than <strong>$1,000</strong> in
+                savings, and <strong>34%</strong> have <strong>$0</strong> in
+                savings <span className="stat-source">(bea.gov)</span>
+              </div>
+            </li>
+            <li className="stat-item">
+              <div className="stat-value">Budgeting</div>
+              <div className="stat-text">
+                While nearly <strong>80%</strong> of Americans budget regularly,
+                less than <strong>25%</strong> stick to it.{" "}
+                <span className="stat-source">(Ramseysolutions.com)</span>
+              </div>
+            </li>
+            <li className="stat-item">
+              <div className="stat-value">Household debt</div>
+              <div className="stat-text">
+                The average debt per household is <strong>$105,056</strong>, and
+                the average debt per adult is <strong>$66,772</strong>{" "}
+                <span className="stat-source">(newyorkfed.org)</span>
+              </div>
+            </li>
+            <li className="stat-item">
+              <div className="stat-value">Retirement</div>
+              <div className="stat-text">
+                Nearly half of households approaching retirement have no savings
+                in an IRA or 401(k).{" "}
+                <span className="stat-source">(ncoa.org)</span>
+              </div>
+            </li>
+            <li className="stat-item">
+              <div className="stat-value">College savings</div>
+              <div className="stat-text">
+                Only <strong>35%</strong> of families use a college savings fund
+                (e.g., 529) to save an average of <strong>$6,844</strong> each.{" "}
+                <span className="stat-source">(educationdata.org)</span>
+              </div>
+            </li>
+            <li className="stat-item">
+              <div className="stat-value">Mortgage debt</div>
+              <div className="stat-text">
+                Americans' total mortgage debt stands at approximately{" "}
+                <strong>$12.94 trillion</strong>, about <strong>70%</strong> of
+                U.S. household debt.{" "}
+                <span className="stat-source">(fred.stlouisfed.org)</span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <main className="steps-showcase">
