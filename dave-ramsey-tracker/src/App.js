@@ -93,6 +93,9 @@ function App() {
 
   return (
     <div className="App">
+      <nav className="navbar">
+        <div className="navbar-brand">Ramsey AI</div>
+      </nav>
       <header className="hero-header">
         <div className="hero-content">
           <h1>Transform Your Financial Future</h1>
@@ -100,11 +103,11 @@ function App() {
             Follow Dave Ramsey's proven 7 Baby Steps to achieve financial peace
             and build lasting wealth
           </p>
-          <div
-            id="voiceflow-chat-container"
-            className="voiceflow-chat-container"
-          ></div>
         </div>
+        <div
+          id="voiceflow-chat-container"
+          className="voiceflow-chat-container"
+        ></div>
       </header>
 
       <main className="steps-showcase">
