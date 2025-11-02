@@ -1,7 +1,7 @@
 .app-footer {
   background: linear-gradient(135deg, #2c3e50, #34495e);
   color: white;
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .footer-content {
@@ -19,6 +19,10 @@
   flex-direction: column;
   justify-content: center;
   align-self: stretch;
+}
+
+.footer-section {
+  text-align: center;
 }
 
 .footer-section h4 {
@@ -61,13 +65,14 @@
 }
 
 .footer-section blockquote {
-  margin: 0;
+  margin: 0 auto;
   padding: 1.2rem;
   background: rgba(255, 255, 255, 0.1);
   border-left: 4px solid #667eea;
   border-radius: 8px;
   font-style: italic;
   line-height: 1.6;
+  max-width: fit-content;
 }
 
 .footer-section cite {
