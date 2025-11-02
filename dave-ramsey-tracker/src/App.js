@@ -219,6 +219,18 @@ function App() {
       <header className="hero-header">
         <div className="hero-content">
           <h1>Transform Your Financial Future</h1>
+          <div className="hero-video">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/OO25TrVo_dU?si=as-wp3ntky_7MZn9"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
           <p>
             Follow Dave Ramsey's proven 7 Baby Steps to achieve financial peace
             and build lasting wealth
