@@ -347,8 +347,7 @@ function App() {
               <div className="stat-value">Savings</div>
               <div className="stat-text">
                 28% of Americans have less than <strong>$1,000</strong> in
-                savings, and <strong>34%</strong> have <strong>$0</strong> in
-                savings <span className="stat-source">(bea.gov)</span>
+                savings. <span className="stat-source">(bea.gov)</span>
               </div>
             </li>
             <li className="stat-item">
