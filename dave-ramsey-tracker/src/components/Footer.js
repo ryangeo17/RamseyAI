@@ -10,6 +10,14 @@ const Footer = () => {
           <p>Your journey to financial freedom, one step at a time.</p>
         </div>
         
+        <div className="footer-section footer-section-remember">
+          <h4>Remember</h4>
+          <blockquote>
+            "Live like no one else, so later you can live like no one else."
+            <cite>- Dave Ramsey</cite>
+          </blockquote>
+        </div>
+        
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
@@ -17,14 +25,6 @@ const Footer = () => {
             <li><a href="https://www.daveramsey.com/baby-steps" target="_blank" rel="noopener noreferrer">Learn About Baby Steps</a></li>
             <li><a href="https://www.everydollar.com" target="_blank" rel="noopener noreferrer">EveryDollar Budget Tool</a></li>
           </ul>
-        </div>
-        
-        <div className="footer-section">
-          <h4>Remember</h4>
-          <blockquote>
-            "Live like no one else, so later you can live like no one else."
-            <cite>- Dave Ramsey</cite>
-          </blockquote>
         </div>
       </div>
       
