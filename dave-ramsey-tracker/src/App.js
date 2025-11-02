@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Footer from './components/Footer';
-import ChatbotModal from './components/ChatbotModal';
 
 const BABY_STEPS = [
   {
@@ -56,14 +55,35 @@ const BABY_STEPS = [
 ];
 
 function App() {
-  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  useEffect(() => {
+    // Load Voiceflow script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: '690791309c414573ccd3a699' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production',
+        voice: {
+          url: "https://runtime-api.voiceflow.com"
+        }
+      });
+    };
+    script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    
+    document.head.appendChild(script);
+
+    // Cleanup function to remove script when component unmounts
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const openChatbot = () => {
-    setIsChatbotOpen(true);
-  };
-
-  const closeChatbot = () => {
-    setIsChatbotOpen(false);
+    // Open Voiceflow chat widget
+    if (window.voiceflow && window.voiceflow.chat) {
+      window.voiceflow.chat.open();
+    }
   };
 
   return (
@@ -82,7 +102,7 @@ function App() {
         <div className="steps-container">
           <h2>The 7 Baby Steps to Financial Freedom</h2>
           <div className="steps-grid">
-            {BABY_STEPS.map((step, index) => (
+            {BABY_STEPS.map((step) => (
               <div key={step.id} className="step-card">
                 <div className="step-number">{step.id}</div>
                 <h3>{step.title}</h3>
@@ -94,10 +114,6 @@ function App() {
       </main>
 
       <Footer />
-
-      {isChatbotOpen && (
-        <ChatbotModal onClose={closeChatbot} />
-      )}
     </div>
   );
 }
