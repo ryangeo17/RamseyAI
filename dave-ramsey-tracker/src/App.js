@@ -88,6 +88,30 @@ function App() {
     }
   };
 
+  const scrollToBabySteps = () => {
+    // Unlock scroll when user clicks the button
+    if (scrollLocked) {
+      setScrollLocked(false);
+      document.body.style.overflow = "";
+    }
+
+    const stepsSection = document.querySelector(".steps-showcase");
+    const navbar = document.querySelector(".navbar");
+    if (stepsSection && navbar) {
+      const navbarHeight = navbar.offsetHeight;
+      const stepsSectionTop =
+        stepsSection.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = stepsSectionTop - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    } else if (stepsSection) {
+      stepsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   // Lock scroll on mount and prevent browser scroll restoration
   useEffect(() => {
     // Scroll to top immediately
@@ -215,6 +239,14 @@ function App() {
     <div className="App">
       <nav className="navbar">
         <div className="navbar-brand">Ramsey AI</div>
+        <div className="navbar-buttons">
+          <button className="navbar-button" onClick={scrollToChat}>
+            Talk to Ramsey
+          </button>
+          <button className="navbar-button" onClick={scrollToBabySteps}>
+            Baby Steps
+          </button>
+        </div>
       </nav>
       <header className="hero-header">
         <div className="hero-content">

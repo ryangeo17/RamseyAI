@@ -12,7 +12,7 @@
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   padding: 1.2rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
@@ -29,6 +29,50 @@
   background-clip: text;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar-button {
+  position: relative;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  border-radius: 25px;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.navbar-button:hover::before {
+  background: #1a1a1a;
+}
+
+.navbar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .hero-header {
@@ -604,6 +648,11 @@
     letter-spacing: 1.5px;
   }
 
+  .navbar-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
   .hero-header {
     min-height: 100vh;
     padding: 3rem 1rem 2rem 1rem;
@@ -689,6 +738,12 @@
   .navbar-brand {
     font-size: 1.3rem;
     letter-spacing: 1px;
+  }
+
+  .navbar-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
   }
 
   .hero-header {
