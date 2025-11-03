@@ -18,6 +18,54 @@ RamseyAI is an intelligent financial coaching assistant that guides users throug
 
 The app provides personalized assessment, step-by-step guidance, and interactive chat coaching powered by AI to help users identify their current position and next actions.
 
+## Setup and Installation
+
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm (comes with Node.js)
+
+### Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd dave-ramsey-tracker
+   ```
+
+2. **Navigate to the project directory**
+   ```bash
+   cd dave-ramsey-tracker
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm start
+   ```
+
+5. **Open your browser**
+   The app will automatically open at `http://localhost:3000`
+
+### Available Scripts
+
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
+
+### Building for Production
+
+To create a production build:
+```bash
+npm run build
+```
+
+The build folder will contain the optimized production files ready for deployment.
+
 ## How we built it
 
 **Frontend**: Built with React 19.2.0 featuring smooth scrolling navigation, scroll-lock UX, and mobile-first responsive design.
